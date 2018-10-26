@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+	<extension point="co.senn.eclipse.mat.inspection.technology">
+		<technology id="sql"
+					name="SQL"
+					impl="co.senn.eclipse.mat.inspection.sql.SQL"/>
+		<technology id="hikaricp"
+					name="HikariCP"
+					impl="co.senn.eclipse.mat.inspection.hikari.HikariCP"/>
+		<technology id="tomcat"
+					name="Apache Tomcat"
+					impl="co.senn.eclipse.mat.inspection.tomcat.Tomcat"/>
+	</extension>
+	
+	<extension point="co.senn.eclipse.mat.inspection.inspection">
+		<inspection id="hikaricp-pool-exhaustion"
+					name="Connection Pool Exhaustion"
+					impl="co.senn.eclipse.mat.inspection.hikari.ConnectionPoolExhaustionInspection"
+					technology="hikaricp"/>
+		<inspection id="sql-open-statements"
+					name="Open Statements"
+					impl="co.senn.eclipse.mat.inspection.sql.OpenStatementsInspection"
+					technology="sql"/>
+		<inspection id="tomcat-non-started-application-contexts"
+					name="Non-Started Application Contexts"
+					impl="co.senn.eclipse.mat.inspection.tomcat.NonStartedContextInspection"
+					technology="tomcat"/>
+	</extension>
+	
+</plugin>
