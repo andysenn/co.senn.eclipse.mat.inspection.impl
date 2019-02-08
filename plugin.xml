@@ -3,6 +3,9 @@
 <plugin>
 
 	<extension point="co.senn.eclipse.mat.inspection.technology">
+		<technology id="collections"
+					name="Collections"
+					impl="co.senn.eclipse.mat.inspection.collection.Collections"/>
 		<technology id="sql"
 					name="SQL"
 					impl="co.senn.eclipse.mat.inspection.sql.SQL"/>
@@ -15,17 +18,30 @@
 	</extension>
 	
 	<extension point="co.senn.eclipse.mat.inspection.inspection">
+		<inspection id="collections-list-to-set"
+					name="List to Set"
+					impl="co.senn.eclipse.mat.inspection.collection.ListToSetInspection"
+					description="Reports Lists that contain only unique, non-null items and may be changed to Sets for performance reasons"
+					technology="collections"/>
 		<inspection id="hikaricp-pool-exhaustion"
 					name="Connection Pool Exhaustion"
 					impl="co.senn.eclipse.mat.inspection.hikari.ConnectionPoolExhaustionInspection"
+					description=""
 					technology="hikaricp"/>
 		<inspection id="sql-open-statements"
 					name="Open Statements"
 					impl="co.senn.eclipse.mat.inspection.sql.OpenStatementsInspection"
+					description=""
 					technology="sql"/>
 		<inspection id="tomcat-non-started-application-contexts"
 					name="Non-Started Application Contexts"
 					impl="co.senn.eclipse.mat.inspection.tomcat.NonStartedContextInspection"
+					description=""
+					technology="tomcat"/>
+		<inspection id="tomcat-http-requests"
+					name="HTTP Requests"
+					impl="co.senn.eclipse.mat.inspection.tomcat.HTTPRequestListInspection"
+					description=""
 					technology="tomcat"/>
 	</extension>
 	

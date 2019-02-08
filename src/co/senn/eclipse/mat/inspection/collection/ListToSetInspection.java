@@ -13,18 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package co.senn.eclipse.mat.inspection.hikari;
+package co.senn.eclipse.mat.inspection.collection;
 
-import org.eclipse.mat.SnapshotException;
 import org.eclipse.mat.snapshot.ISnapshot;
+import org.eclipse.mat.util.IProgressListener;
 
-import co.senn.eclipse.mat.inspection.api.ITechnology;
+import co.senn.eclipse.mat.inspection.api.IInspection;
+import co.senn.eclipse.mat.inspection.api.IInspectionResult;
 
-public class HikariCP implements ITechnology {
+public class ListToSetInspection implements IInspection {
 
 	@Override
-	public boolean isPresent(ISnapshot snapshot) throws SnapshotException {
-		return ITechnology.isPackagePresent(snapshot, "com.zaxxer.hikari");
+	public IInspectionResult execute(ISnapshot snapshot, IProgressListener listener) throws Exception {
+		return null;
 	}
 
 }
